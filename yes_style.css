@@ -1,27 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600;700&display=swap");
 
+:root {
+  --rose: #e44b7a;
+  --wine: #6f1936;
+  --text: #542435;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: white;
-    font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  font-family: "Nunito", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 80% 10%, #ffdbe7 0%, transparent 30%),
+    radial-gradient(circle at 20% 88%, #ffd1de 0%, transparent 36%),
+    linear-gradient(135deg, #fff4f8 0%, #ffe5ed 50%, #fff9fb 100%);
+}
+
+body::before {
+  content: "\2665";
+  position: fixed;
+  left: 10%;
+  top: 14%;
+  font-size: 2.4rem;
+  color: #f59ab8;
+  opacity: 0.55;
+}
+
+body::after {
+  content: "\2665";
+  position: fixed;
+  right: 12%;
+  bottom: 12%;
+  font-size: 3rem;
+  color: #f59ab8;
+  opacity: 0.45;
 }
 
 .container {
-    text-align: center;
+  width: min(90vw, 730px);
+  text-align: center;
+  padding: 34px 26px 30px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(228, 75, 122, 0.2);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 18px 52px rgba(173, 57, 96, 0.23);
+  animation: fadeIn 0.65s ease;
 }
 
 .header_text {
-    font-size: 3em;
-    color: #d32f2f;
+  margin: 0 0 18px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5.2vw, 3.1rem);
+  line-height: 1.2;
+  color: var(--wine);
 }
 
 .gif_container img {
-    width: 300px; 
-    max-width: 500px; 
-    height: auto; 
+  width: min(330px, 78vw);
+  height: auto;
+  border-radius: 16px;
+  border: 4px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 24px rgba(170, 59, 98, 0.28);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
